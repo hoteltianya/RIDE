@@ -17,7 +17,9 @@ def find_packages(where):
 ROOT_DIR = dirname(abspath(__file__))
 SOURCE_DIR = 'src'
 
-execfile(join(ROOT_DIR, 'src', 'robotide', 'version.py'))
+#execfile(join(ROOT_DIR, 'src', 'robotide', 'version.py'))
+with open(join(ROOT_DIR, 'src', 'robotide', 'version.py')) as f:
+    exec(f.read())
 
 package_data = {
     'robotide.preferences': ['settings.cfg'],
